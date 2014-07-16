@@ -1,21 +1,104 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <style type="text/css" media="all">
-      textarea {
-        margin: 10px;
-      }
-      body {
-        /* background-color: gray; */
-      }
+
+    .cherry {
+        margin-left:auto;
+        margin-right:auto;
+
+        width: 500;
+        height: 220;
+        max-width: 500px;
+        background: #FFF;
+        padding: 30px 30px 20px 30px;
+        box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+        -webkit-box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+        font: 12px Arial, Helvetica, sans-serif;
+        color: #666;
+        -webkit-border-radius: 10px;
+    }
+    .cherry label {
+        margin: 0px 0px 5px;
+    }
+    .cherry label>span {
+        float: left;
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 10px;
+        color: #969696;
+    }
+    .cherry input[type="text"],  .cherry textarea {
+        color: #555;
+        width: 70%;
+        padding: 3px 0px 3px 5px;
+        margin-top: 2px;
+        margin-right: 6px;
+        margin-bottom: 16px;
+        border: 1px solid #e5e5e5;
+        background: #fbfbfb;
+        height: 25px;
+        line-height:15px;
+        outline: 0;
+        -webkit-box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+        box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+    }
+    .cherry textarea{
+        height:130px;
+        padding: 5px 0px 0px 5px;
+        width: 70%;
+    }
+    .cherry .button {
+        -moz-box-shadow:inset 0px 1px 0px 0px #fbafe3;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #fbafe3;
+        box-shadow:inset 0px 1px 0px 0px #fbafe3;
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff5bb0), color-stop(1, #ef027d) );
+        background:-moz-linear-gradient( center top, #ff5bb0 5%, #ef027d 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bb0', endColorstr='#ef027d');
+        /* background-color:#ff5bb0; */
+        /* border-radius:9px; */
+        border:1px solid #ee1eb5;
+        display:inline-block;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        font-style:normal;
+        /* height: 40px; */
+        /* line-height: 30px; */
+        /* width:100px; */
+        /* text-decoration:none; */
+        text-align:center;
+        text-shadow:1px 1px 0px #c70067;
+    }
+    .cherry .button:hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ef027d), color-stop(1, #ff5bb0) );
+        background:-moz-linear-gradient( center top, #ef027d 5%, #ff5bb0 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef027d', endColorstr='#ff5bb0');
+        background-color:#ef027d;
+    }
+    .cherry .button:active {
+        position:relative;
+        top:1px;
+    }
     </style>
   </head>
 <body>
-    <form action="text-entry_submit" method="get" accept-charset="utf-8">
-        
-    <input type="text" id="headword"/>
-    <textarea rows="13" cols="33" id="edit-box"></textarea>
-    
-        <p><input type="submit" value="Continue →"></p>
+    <form class="cherry" id="text_capture" method="post">
+    <label>
+        <span> HeadWord:</span>
+        <input type="text" id="headword"></input>
+    </lable>    
+
+    <label><span> Context: </span>
+        <textarea rows="13" cols="33" id="edit-box"></textarea>
+    </label>
+   <label>
+        <span>&nbsp;</span>
+        <input type="submit" class="button" value="Send" />
+    </label>    
     </form>
   </body>
 </html>
