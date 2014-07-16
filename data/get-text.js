@@ -1,21 +1,28 @@
-// When the user hits return, send the "text-entered"
-// message to main.js.
-// The message payload is the contents of the edit box.
+var form = document.getElementById('text_capture');
 var textArea = document.getElementById("edit-box");
-textArea.addEventListener('keyup', function onkeyup(event) {
-  if (event.keyCode == 13) {
-    // Remove the newline.
-    text = textArea.value.replace(/(\r\n|\n|\r)/gm,"");
-    self.port.emit("text-entered", text);
-    textArea.value = '';
-  }
-}, false);
-// Listen for the "show" event being sent from the
-// main add-on code. It means that the panel's about
-// to be shown.
-//
-// Set the focus to the text area so the user can
-// just start typing.
-self.port.on("show", function onShow() {
-  textArea.focus();
+var input = document.getElementById("headword");
+
+self.port.on("show", function onShow(d) {
+  textArea.value = d;
 });
+
+if (form.attachEvent) {
+    form.attachEvent("submit", processForm);
+} else {
+    form.addEventListener("submit", processForm);
+}
+
+function processForm(e) {
+    if (e.preventDefault) e.preventDefault();
+    text = textArea.value;
+    self.port.emit("text-entered", {
+        'title': input.value,
+        'content': text,
+        'rating': 1
+    });
+    input.value = '';
+    textArea.value = '';
+    // return false to prevent the default form behavior
+    return false;
+}
+
