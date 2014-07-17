@@ -1,9 +1,16 @@
 {
-  "name": "cherry",
-  "title": "cherry",
-  "id": "jid1-jWDT7P4YM5MkJA",
-  "description": "a basic add-on",
-  "author": "",
-  "license": "MPL 2.0",
-  "version": "0.1"
+    "name": "cherry",
+    "title": "cherry",
+    "id": "jid1-jWDT7P4YM5MkJA",
+    "preferences": [{
+        "name": "serviceURL",
+        "title": "service URL",
+        "description": "the web service where your captured text is posted to",
+        "type": "string",
+        "value": "http://localhost:9000/entry/remoteSave"
+    }],
+    "description": "capture your mouse selection and post the selected content to remote web services",
+        "author": "Zane XY",
+        "license": "MPL 2.0",
+        "version": "0.1"
 }
