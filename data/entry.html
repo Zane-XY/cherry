@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cherry</title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: Helvetica, sans-serif;
+}
+
+#content-area {
+    width: 450px;
+    margin-top: 25px;
+}
+
+#content-area input, #content-area textarea {
+    padding: 5px;
+    width: 320px;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4em;
+    margin: 0px 0px 10px 0px;
+    border: 2px solid #ccc;
+}
+
+#content-area textarea {
+    height: 120px;
+}
+
+#content-area textarea:focus, #content-area input:focus {
+    border: 2px solid #900;
+}
+
+#content-area input.submit-button {
+    width: 100px;
+    float: right;
+}
+
+label {
+    float: left;
+    text-align: right;
+    margin-right: 15px;
+    width: 100px;
+    padding-top: 5px;
+    font-size: 1.4em;
+}
+</style>
+</head>
+<body>
+<div id="content-area">
+    <form id="entryForm" accept-charset="utf-8">
+        <label for="headword">headword</label><input type="text" name="headword" value="" id="headword">
+        <label for="context">context</label><textarea id="context" name="context" rows="8" cols="40"></textarea>
+        <input class="submit-button" type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
